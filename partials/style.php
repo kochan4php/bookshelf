@@ -4,11 +4,6 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif;
   }
 
-  body {
-    background-color: #1e293b;
-    color: #fff !important;
-  }
-
   .nav-link,
   .navbar-brand {
     color: #fff !important;
@@ -63,18 +58,6 @@
   .list-group-item {
     background-color: rgba(15, 23, 42) !important;
     color: #fff;
-  }
-
-  .btn {
-    background-color: rgb(20, 184, 166) !important;
-    outline-color: rgb(20, 184, 166) !important;
-    border-color: rgb(20, 184, 166) !important;
-  }
-
-  .btn:hover {
-    background-color: rgb(16, 148, 132) !important;
-    outline-color: rgb(16, 148, 132) !important;
-    border-color: rgb(16, 148, 132) !important;
   }
 
   a {
