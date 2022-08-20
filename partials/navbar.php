@@ -1,18 +1,18 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark mb-3">
+<nav class="navbar navbar-expand-lg mb-3 text-light">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Bookselft Management</a>
+    <a class="navbar-brand" href="index.php">Kochan BM</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Home</a>
+          <a class="nav-link active" href="index.php">Beranda</a>
         </li>
         <li class="nav-item dropdown">
-          <button class="nav-link dropdown-toggle btn btn-dark" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             List Buku
-          </button>
+          </a>
           <ul class="dropdown-menu dropdown-menu-dark">
             <li><a class="dropdown-item" href="">Sudah dibaca</a></li>
             <li><a class="dropdown-item" href="">Belum dibaca</a></li>
