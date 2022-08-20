@@ -1,0 +1,22 @@
+html,
+body {
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+input[type="search"],
+.btn {
+  border-radius: 3px !important;
+  outline: none;
+}
+
+.btn,
+.btn:focus,
+.btn:active,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus,
+.btn-close:focus,
+.btn-close:active {
+  outline: none !important;
+  box-shadow: none;
+}
