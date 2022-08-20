@@ -1,0 +1,20 @@
+{
+  "name": "deo-subarno/crud-php-ajax-mysql",
+  "description": "Bookshelf management using PHP Ajax MySQL",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "DeoSubarno\\CrudPhpAjaxMysql\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Aphrodeo Subarno",
+      "email": "aprodeosubarno@gmail.com"
+    }
+  ],
+  "require": {
+    "rosell-dk/webp-convert": "^2.9"
+  }
+}

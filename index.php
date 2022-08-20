@@ -1,6 +1,8 @@
-<?php require_once __DIR__ . '/partials/header.php' ?>
+<?php require_once 'vendor/autoload.php'; ?>
 
-<?php $image = 'storage/book-images/book.jpg' ?>
+<?php require_once __DIR__ . '/src/partials/header.php'; ?>
+
+<?php $image = 'storage/book-images/book.jpg'; ?>
 
 <!-- main -->
 <div class="container">
@@ -47,4 +49,4 @@
 </div>
 <!-- end main -->
 
-<?php require_once __DIR__ . '/partials/footer.php' ?>
+<?php require_once __DIR__ . '/src/partials/footer.php' ?>

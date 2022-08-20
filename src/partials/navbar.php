@@ -14,7 +14,7 @@
             List Buku
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="">Sudah dibaca</a></li>
+            <li><a class="dropdown-item" href="src/app/functions.php">Sudah dibaca</a></li>
             <li><a class="dropdown-item" href="">Belum dibaca</a></li>
           </ul>
         </li>
