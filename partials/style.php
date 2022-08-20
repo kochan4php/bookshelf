@@ -4,15 +4,20 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif;
   }
 
+  body {
+    background-color: #1e293b;
+    color: #fff !important;
+  }
+
+  .nav-link,
+  .navbar-brand {
+    color: #fff !important;
+  }
+
   input[type="search"],
   .btn {
     border-radius: 3px !important;
     outline: none;
-  }
-
-  body {
-    background-color: rgb(15, 23, 42);
-    color: #fff !important;
   }
 
   .navbar .navbar-toggler {
@@ -36,7 +41,7 @@
   }
 
   nav {
-    background-color: rgba(7, 26, 46, 0.37) !important;
+    background-color: #111827 !important;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
     backdrop-filter: blur(18px) !important;
     -webkit-backdrop-filter: blur(18px) !important;
