@@ -3,14 +3,14 @@
 <?php
 
 require_once __DIR__ . '/src/app/functions.php';
-
+require_once __DIR__ . '/src/app/database.php';
 // convert_webp();
 
 ?>
 
 <?php require_once __DIR__ . '/src/partials/header.php'; ?>
 
-<?php $image = 'storage/book-images/book.jpg'; ?>
+<?php $image = 'storage/book-images/book.jpg.webp'; ?>
 
 <!-- main -->
 <div class="container">

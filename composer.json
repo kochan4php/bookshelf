@@ -15,6 +15,7 @@
     }
   ],
   "require": {
-    "rosell-dk/webp-convert": "^2.9"
+    "rosell-dk/webp-convert": "^2.9",
+    "vlucas/phpdotenv": "^5.4"
   }
 }
