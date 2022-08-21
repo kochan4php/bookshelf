@@ -4,7 +4,6 @@
 
 require_once __DIR__ . '/src/app/functions.php';
 require_once __DIR__ . '/src/app/database.php';
-// convert_webp();
 
 ?>
 
