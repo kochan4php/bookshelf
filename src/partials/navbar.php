@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg mb-4 text-light">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Kochan BM</a>
+    <a class="navbar-brand" href="index.php">Bookshelf</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon navbar-dark" style="color: white;"></span>
     </button>

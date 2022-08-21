@@ -15,7 +15,7 @@ $image = 'storage/book-images/book.jpg.webp';
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>Bookshelf</h1>
+      <h1>Buku kamu</h1>
     </div>
   </div>
 
