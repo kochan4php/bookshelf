@@ -2,7 +2,10 @@
 
 use WebPConvert\WebPConvert;
 
-function cetakOutput()
+function convert_webp(): void
 {
-  echo 'cetak output dari folder ' . __DIR__;
+  $source = __DIR__ . '/../../storage/book-images/book.jpg';
+  $destination = $source . '.webp';
+
+  WebPConvert::convert($source, $destination, []);
 }

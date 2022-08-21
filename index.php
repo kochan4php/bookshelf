@@ -1,5 +1,13 @@
 <?php require_once 'vendor/autoload.php'; ?>
 
+<?php
+
+require_once __DIR__ . '/src/app/functions.php';
+
+// convert_webp();
+
+?>
+
 <?php require_once __DIR__ . '/src/partials/header.php'; ?>
 
 <?php $image = 'storage/book-images/book.jpg'; ?>
