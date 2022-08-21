@@ -1,6 +1,6 @@
 <?php
 
-function convert_webp(): void
+function convertWebp(): void
 {
   $source = __DIR__ . '/../../storage/book-images/book.jpg';
   $destination = $source . '.webp';
