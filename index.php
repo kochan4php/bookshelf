@@ -7,9 +7,9 @@ $image = 'storage/book-images/book.jpg.webp';
 
 ?>
 
-<!-- include header -->
+<!-- require_once header -->
 <?php require_once __DIR__ . '/src/partials/header.php'; ?>
-<!-- include header -->
+<!-- require_once header -->
 
 <!-- main -->
 <div class="container">
@@ -60,6 +60,6 @@ $image = 'storage/book-images/book.jpg.webp';
 </div>
 <!-- end main -->
 
-<!-- include footer -->
+<!-- require_once footer -->
 <?php require_once __DIR__ . '/src/partials/footer.php' ?>
-<!-- include footer -->
+<!-- require_once footer -->
