@@ -2,9 +2,9 @@
 
 require_once __DIR__ . '/../../load.php';
 
-$connect = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE']) or die;
+$mysqli = new mysqli($_ENV['DB_HOST'], $_ENV['DB_USERNAME'], $_ENV['DB_PASSWORD'], $_ENV['DB_DATABASE']);
 
-if (mysqli_connect_errno()) {
-  echo 'Failed to connect to MySQL: ' . mysqli_connect_error();
+if ($mysqli->connect_errno) {
+  echo 'Failed to connect to MySQL: ' . $mysqli->connect_error;
   exit();
 }

@@ -7,3 +7,13 @@ function convert_webp(): void
 
   \WebPConvert\WebPConvert::convert($source, $destination, []);
 }
+
+function getAllBooks(): array
+{
+  global $mysqli;
+
+  $query = "SELECT * FROM books";
+  $result = $mysqli->query($query)->fetch_all(MYSQLI_ASSOC);
+
+  return $result;
+}
