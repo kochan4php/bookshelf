@@ -50,9 +50,9 @@
 
   .form-control,
   .form-control:focus {
-    background-color: rgb(226, 232, 240) !important;
+    background-color: #eee !important;
     color: rgb(15, 23, 42);
-    border-color: rgb(20, 184, 166) !important;
+    border-color: #bbb !important;
   }
 
   .list-group-item {
