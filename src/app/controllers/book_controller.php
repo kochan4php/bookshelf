@@ -27,13 +27,7 @@ function insertBook($data): void
   $jumlahHalaman = htmlspecialchars($data['jumlah_halaman']);
 
   $query = "INSERT INTO books VALUES (
-    '',
-    NULL,
-    :judul_buku,
-    :slug,
-    :penulis,
-    :jumlah_halaman,
-    'Belum'
+    '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'Belum'
   )";
 
   $stmt = $pdo->prepare($query);

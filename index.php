@@ -57,7 +57,7 @@ $image = 'storage/book-images/book.jpg.webp';
                     <i class="bi bi-trash"></i>
                   </a>
                 </td>
-                <td>Sudah</td>
+                <td><?= $book['status_dibaca'] ?></td>
               </tr>
               <?php $index++ ?>
             <?php endforeach ?>
