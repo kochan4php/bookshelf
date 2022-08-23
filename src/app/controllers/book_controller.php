@@ -18,6 +18,21 @@ function getAllBooks(): array
   return $stmt;
 }
 
+function getBookBySlug($slug): array
+{
+  global $pdo;
+
+  $slug = htmlspecialchars($slug);
+
+  $query = "SELECT * FROM books WHERE slug = :slug";
+  $stmt = $pdo->prepare($query);
+  $stmt->bindParam(':slug', $slug);
+  $stmt->execute();
+  $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+  return $result;
+}
+
 function insertBook($data): void
 {
   global $pdo;

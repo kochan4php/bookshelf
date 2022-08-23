@@ -47,7 +47,7 @@ $image = 'storage/book-images/book.jpg.webp';
                 </td>
                 <td><?= $book['judul_buku']; ?></td>
                 <td class="d-flex gap-2 justify-content-center">
-                  <a href="" class="btn btn-info">
+                  <a href="detail.php?book=<?= $book['slug'] ?>" class="btn btn-info">
                     <i class="bi bi-eye"></i>
                   </a>
                   <a href="" class="btn btn-success">
