@@ -37,29 +37,35 @@ $image = 'storage/book-images/book.jpg.webp';
           </tr>
         </thead>
         <tbody class="table-group-divider">
-          <?php $index = 1 ?>
-          <?php foreach ($books as $book) : ?>
-            <tr class="text-center">
-              <th scope="row"><?= $index ?></th>
-              <td>
-                <img src="<?= $image ?>" />
-              </td>
-              <td><?= $book['judul_buku']; ?></td>
-              <td class="d-flex gap-2 justify-content-center">
-                <a href="" class="btn btn-info">
-                  <i class="bi bi-eye"></i>
-                </a>
-                <a href="" class="btn btn-success">
-                  <i class="bi bi-pencil-square"></i>
-                </a>
-                <a href="" class="btn btn-danger">
-                  <i class="bi bi-trash"></i>
-                </a>
-              </td>
-              <td>Sudah</td>
+          <?php if (count($books) > 0) : ?>
+            <?php $index = 1 ?>
+            <?php foreach ($books as $book) : ?>
+              <tr class="text-center">
+                <th scope="row"><?= $index ?></th>
+                <td>
+                  <img src="<?= $image ?>" />
+                </td>
+                <td><?= $book['judul_buku']; ?></td>
+                <td class="d-flex gap-2 justify-content-center">
+                  <a href="" class="btn btn-info">
+                    <i class="bi bi-eye"></i>
+                  </a>
+                  <a href="" class="btn btn-success">
+                    <i class="bi bi-pencil-square"></i>
+                  </a>
+                  <a href="" class="btn btn-danger">
+                    <i class="bi bi-trash"></i>
+                  </a>
+                </td>
+                <td>Sudah</td>
+              </tr>
+              <?php $index++ ?>
+            <?php endforeach ?>
+          <?php else : ?>
+            <tr>
+              <td class="text-center" colspan="5">Kamu belum punya buku :(</td>
             </tr>
-            <?php $index++ ?>
-          <?php endforeach ?>
+          <?php endif ?>
         </tbody>
       </table>
     </div>

@@ -1,6 +1,8 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
+
+if (!empty($_POST)) insertBook($_POST);
 ?>
 
 <!-- require_once header -->
@@ -15,24 +17,24 @@ require_once __DIR__ . '/src/init.php';
     </div>
   </div>
 
-  <form>
+  <form method="POST">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="gambar-buku" class="form-label">Gambar Buku</label>
           <input class="form-control" type="file" id="gambar-buku" name="gambar-buku">
-        </div>
+        </div> -->
         <div class="mb-3">
-          <label for="judul-buku" class="form-label">Judul Buku</label>
-          <input type="text" class="form-control" id="judul-buku" name="judul-buku" placeholder="Judul Buku" required autocomplete="off">
+          <label for="judul_buku" class="form-label">Judul Buku</label>
+          <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Judul Buku" required autocomplete="off">
         </div>
         <div class="mb-3">
           <label for="penulis" class="form-label">Penulis</label>
           <input type="text" class="form-control" id="penulis" name="penulis" placeholder="Penulis Buku" required autocomplete="off">
         </div>
         <div class="mb-3">
-          <label for="jumlah-halaman" class="form-label">Jumlah halaman</label>
-          <input type="number" class="form-control" id="jumlah-halaman" name="jumlah-halaman" placeholder="Jumlah halaman" autocomplete="off">
+          <label for="jumlah_halaman" class="form-label">Jumlah halaman</label>
+          <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Jumlah halaman" autocomplete="off">
         </div>
         <button type="submit" class="btn btn-primary w-100">Submit</button>
       </div>
