@@ -12,7 +12,7 @@ function getAllBooks(): array
 {
   global $pdo;
 
-  $query = "SELECT * FROM books";
+  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status";
   $stmt = $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
   return $stmt;
@@ -24,7 +24,7 @@ function getBookBySlug($slug): array
 
   $slug = htmlspecialchars($slug);
 
-  $query = "SELECT * FROM books WHERE slug = :slug";
+  $query = "SELECT * FROM buku WHERE slug = :slug";
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(':slug', $slug);
   $stmt->execute();
@@ -41,8 +41,8 @@ function insertBook($data): void
   $penulis = htmlspecialchars($data['penulis']);
   $jumlahHalaman = htmlspecialchars($data['jumlah_halaman']);
 
-  $query = "INSERT INTO books VALUES (
-    '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'Belum'
+  $query = "INSERT INTO buku VALUES (
+    '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
   )";
 
   $stmt = $pdo->prepare($query);
