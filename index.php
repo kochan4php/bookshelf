@@ -2,6 +2,12 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
 
+if (!empty($_FILES)) {
+  uploadGambarBuku();
+}
+
+if (!empty($_POST)) insertBook($_POST);
+
 $books = getAllBooks();
 $image = 'storage/book-images/book.jpg.webp';
 
@@ -18,9 +24,9 @@ $image = 'storage/book-images/book.jpg.webp';
       <h1>Buku kamu</h1>
     </div>
     <div class="col d-flex justify-content-end align-items-center">
-      <a href="create.php" class="btn btn-primary fw-medium">
+      <button class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Tambah Buku
-      </a>
+      </button>
     </div>
   </div>
 
@@ -76,3 +82,40 @@ $image = 'storage/book-images/book.jpg.webp';
 <!-- require_once footer -->
 <?php require_once __DIR__ . '/src/partials/footer.php' ?>
 <!-- require_once footer -->
+
+<!-- modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Tambah Buku</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="gambar_buku" class="form-label">Gambar Buku</label>
+            <input type="file" class="form-control" id="gambar_buku" name="gambar_buku" required autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="judul_buku" class="form-label">Judul Buku</label>
+            <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Judul Buku" required autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="penulis" class="form-label">Penulis</label>
+            <input type="text" class="form-control" id="penulis" name="penulis" placeholder="Penulis Buku" required autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="jumlah_halaman" class="form-label">Jumlah halaman</label>
+            <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Jumlah halaman" autocomplete="off">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
+          <button type="submit" class="btn btn-primary">Tambah</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- modal -->

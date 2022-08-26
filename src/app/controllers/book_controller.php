@@ -24,7 +24,7 @@ function getBookBySlug($slug): array
 
   $slug = htmlspecialchars($slug);
 
-  $query = "SELECT * FROM buku WHERE slug = :slug";
+  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status WHERE slug = :slug";
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(':slug', $slug);
   $stmt->execute();
