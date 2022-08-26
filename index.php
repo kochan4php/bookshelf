@@ -1,15 +1,13 @@
 <?php
+
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
 
-if (!empty($_FILES)) {
-  uploadGambarBuku();
-}
+if (isset($_GET['idbuku'])) deleteBook($_GET['idbuku']);
 
 if (!empty($_POST)) insertBook($_POST);
 
 $books = getAllBooks();
-$image = 'storage/book-images/book.jpg.webp';
 
 ?>
 
@@ -49,7 +47,11 @@ $image = 'storage/book-images/book.jpg.webp';
               <tr class="text-center">
                 <th scope="row"><?= $index ?></th>
                 <td>
-                  <img src="<?= $image ?>" />
+                  <?php if ($book['gambar_buku']) : ?>
+                    <img src="storage/book-images/<?= $book['gambar_buku'] ?>" width="200" />
+                  <?php else : ?>
+                    <img src="storage/book-images/book.jpg.webp" width="200" />
+                  <?php endif ?>
                 </td>
                 <td><?= $book['judul_buku']; ?></td>
                 <td class="d-flex gap-2 justify-content-center">
@@ -59,7 +61,7 @@ $image = 'storage/book-images/book.jpg.webp';
                   <a href="" class="btn btn-success">
                     <i class="bi bi-pencil-square"></i>
                   </a>
-                  <a href="" class="btn btn-danger">
+                  <a href="index.php?idbuku=<?= $book['id_buku'] ?>" class="btn btn-danger" onclick="return confirm('Hapus buku ini?')">
                     <i class="bi bi-trash"></i>
                   </a>
                 </td>
@@ -79,10 +81,6 @@ $image = 'storage/book-images/book.jpg.webp';
 </div>
 <!-- end main -->
 
-<!-- require_once footer -->
-<?php require_once __DIR__ . '/src/partials/footer.php' ?>
-<!-- require_once footer -->
-
 <!-- modal -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -95,7 +93,7 @@ $image = 'storage/book-images/book.jpg.webp';
         <div class="modal-body">
           <div class="mb-3">
             <label for="gambar_buku" class="form-label">Gambar Buku</label>
-            <input type="file" class="form-control" id="gambar_buku" name="gambar_buku" required autocomplete="off">
+            <input type="file" class="form-control" id="gambar_buku" name="gambar_buku" autocomplete="off">
           </div>
           <div class="mb-3">
             <label for="judul_buku" class="form-label">Judul Buku</label>
@@ -119,3 +117,7 @@ $image = 'storage/book-images/book.jpg.webp';
   </div>
 </div>
 <!-- modal -->
+
+<!-- require_once footer -->
+<?php require_once __DIR__ . '/src/partials/footer.php' ?>
+<!-- require_once footer -->

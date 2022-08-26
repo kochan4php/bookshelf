@@ -41,9 +41,19 @@ function insertBook($data): void
   $penulis = htmlspecialchars($data['penulis']);
   $jumlahHalaman = htmlspecialchars($data['jumlah_halaman']);
 
-  $query = "INSERT INTO buku VALUES (
-    '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
-  )";
+  $upload = upload_book_image();
+
+  $query = "";
+
+  if ($upload) {
+    $query = "INSERT INTO buku VALUES (
+      '', '$upload', :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
+    )";
+  } else {
+    $query = "INSERT INTO buku VALUES (
+      '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
+    )";
+  }
 
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(':judul_buku', $judulBuku);
@@ -53,4 +63,16 @@ function insertBook($data): void
   $stmt->execute();
 
   if ($stmt->rowCount() > 0) header('Location: index.php');
+}
+
+function deleteBook($id): void
+{
+  global $pdo;
+
+  $query = "DELETE FROM buku WHERE id_buku = :id";
+  $stmt = $pdo->prepare($query);
+  $stmt->bindParam(':id', $id);
+  $stmt->execute();
+
+  header('Location: index.php');
 }

@@ -55,6 +55,8 @@
 
 <body>
 
-  <!-- navbar -->
-  <?php require_once __DIR__ . '/navbar.php'; ?>
-  <!-- end navbar -->
+  <div class="main-content">
+
+    <!-- navbar -->
+    <?php require_once __DIR__ . '/navbar.php'; ?>
+    <!-- end navbar -->

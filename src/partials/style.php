@@ -4,6 +4,17 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif;
   }
 
+  .main-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .container {
+    flex-basis: auto;
+  }
+
   .nav-link,
   .navbar-brand {
     color: #fff !important;
@@ -53,6 +64,10 @@
     background-color: #eee !important;
     color: rgb(15, 23, 42);
     border-color: #bbb !important;
+  }
+
+  .table {
+    font-size: 1.1rem;
   }
 
   .list-group-item {
