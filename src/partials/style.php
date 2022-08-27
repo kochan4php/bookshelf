@@ -35,19 +35,6 @@
     box-shadow: none;
   }
 
-  nav {
-    background-color: #111827 !important;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
-    backdrop-filter: blur(18px) !important;
-    -webkit-backdrop-filter: blur(18px) !important;
-    -moz-backdrop-filter: blur(18px) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .card {
-    background-color: rgb(15, 23, 42) !important;
-  }
-
   .form-control,
   .form-control:focus {
     background-color: #eee !important;
@@ -59,18 +46,15 @@
     font-size: 1.1rem;
   }
 
-  .list-group-item {
-    background-color: rgba(15, 23, 42) !important;
-    color: #fff;
-  }
-
   a {
     text-decoration: none !important;
   }
 
-  .list-group {
-    background-color: rgb(15, 23, 42) !important;
-    color: rgb(226, 232, 240);
-    border-color: rgb(20, 184, 166) !important;
+  .auth-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 </style>

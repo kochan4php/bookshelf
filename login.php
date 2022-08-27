@@ -2,8 +2,16 @@
 <?php require_once __DIR__ . '/src/partials/auth/header.php' ?>
 <!-- require_once header -->
 
-<div class="container min-h-screen mx-auto">
-  <h1 class="text-2xl font-medium">Login</h1>
+<div class="container auth-container">
+  <div class="row">
+    <div class="col">
+      <h1 class="">Login</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <form method="POST"></form>
+  </div>
 </div>
 
 <!-- require_once footer -->
