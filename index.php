@@ -3,6 +3,8 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
 
+if (!isset($_SESSION['islogin'])) header('Location: login.php');
+
 if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
 
 if (!empty($_POST)) insertBook($_POST);
@@ -48,9 +50,9 @@ $books = getAllBooks();
                 <th scope="row"><?= $index ?></th>
                 <td>
                   <?php if ($book['gambar_buku']) : ?>
-                    <img src="storage/book-images/<?= $book['gambar_buku'] ?>" width="200" />
+                    <img src="storage/book-images/<?= $book['gambar_buku'] ?>" width="100" />
                   <?php else : ?>
-                    <img src="storage/book-images/book.jpg" width="200" />
+                    <img src="storage/no-image-available.webp" width="100" />
                   <?php endif ?>
                 </td>
                 <td><?= $book['judul_buku']; ?></td>

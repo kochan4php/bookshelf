@@ -4,7 +4,7 @@ function getAllBooks(): array
 {
   global $pdo;
 
-  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status";
+  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buk u.id_status";
   $stmt = $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
   return $stmt;
@@ -33,17 +33,17 @@ function insertBook($data): void
   $penulis = htmlspecialchars($data['penulis']);
   $jumlahHalaman = htmlspecialchars($data['jumlah_halaman']);
 
-  $upload = upload_book_image();
+  $upload = $_FILES['gambar_buku']['name'] !== "" ? upload_book_image() : false;
 
   $query = "";
 
   if ($upload) {
     $query = "INSERT INTO buku VALUES (
-      '', '$upload', :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
+      '', '$upload', :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01', 1
     )";
   } else {
     $query = "INSERT INTO buku VALUES (
-      '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01'
+      '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01', 1
     )";
   }
 
@@ -55,6 +55,11 @@ function insertBook($data): void
   $stmt->execute();
 
   if ($stmt->rowCount() > 0) header('Location: index.php');
+}
+
+function updateBook(): void
+{
+  // 
 }
 
 function deleteBook($id): void

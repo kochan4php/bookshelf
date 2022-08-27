@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bookshelf Management</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
 
   <!-- icon -->
   <meta charset="utf-8">
@@ -36,22 +37,17 @@
   <meta name="application-name" content="Larablog">
   <!-- end icon -->
 
-  <!-- bootstrap css & icon -->
-  <?php require_once __DIR__ . '/bootstrap/bootstrap-css.php' ?>
-  <!-- end bootstrap css & icon -->
+  <!-- bs css & icon -->
+  <?php require_once __DIR__ . '/../bootstrap/bootstrap-css.php' ?>
+  <!-- bs css & icon -->
 
   <!-- font -->
-  <?php require_once __DIR__ . '/font.php' ?>
+  <?php require_once __DIR__ . '/../font.php' ?>
   <!-- font -->
 
   <!-- my css -->
-  <?php require_once __DIR__ . '/style.php'; ?>
+  <?php require_once __DIR__ . '/../style.php' ?>
   <!-- end my css -->
 </head>
 
 <body>
-
-
-  <!-- navbar -->
-  <?php require_once __DIR__ . '/navbar.php'; ?>
-  <!-- end navbar -->

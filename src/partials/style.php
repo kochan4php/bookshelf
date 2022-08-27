@@ -1,11 +1,7 @@
 <style>
   html,
   body {
-    font-family: "Nunito", Arial, Helvetica, sans-serif;
-  }
-
-  .container {
-    flex-basis: auto;
+    font-family: "Nunito", Arial, Helvetica, sans-serif !important;
   }
 
   .nav-link,

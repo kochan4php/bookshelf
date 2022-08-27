@@ -2,8 +2,6 @@
 
 function upload_book_image()
 {
-  if (empty($_FILES)) return false;
-
   $filename = $_FILES['gambar_buku']['name'];
   $typefile = $_FILES['gambar_buku']['type'];
   $tmp = $_FILES['gambar_buku']['tmp_name'];
