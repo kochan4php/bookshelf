@@ -4,13 +4,6 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif;
   }
 
-  .main-content {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
   .container {
     flex-basis: auto;
   }

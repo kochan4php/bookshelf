@@ -17,7 +17,7 @@ function upload_book_image()
   if (!in_array($typefile, $ext_image)) {
     echo '
       <script>
-        alert("Gambar tidak valid")
+        alert("File yang di upload harus gambar")
       </script>
     ';
     return false;
@@ -41,5 +41,6 @@ function upload_book_image()
     return false;
   }
 
-  if (move_uploaded_file($tmp, 'storage/book-images/' . $filename)) return $filename;
+  if (move_uploaded_file($tmp, 'storage/book-images/' . $filename))
+    return $filename;
 }

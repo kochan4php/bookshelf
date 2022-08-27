@@ -1,13 +1,5 @@
 <?php
 
-function convertWebp(): void
-{
-  $source = __DIR__ . '/../../storage/book-images/book.jpg';
-  $destination = $source . '.webp';
-
-  \WebPConvert\WebPConvert::convert($source, $destination, []);
-}
-
 function getAllBooks(): array
 {
   global $pdo;
@@ -68,6 +60,9 @@ function insertBook($data): void
 function deleteBook($id): void
 {
   global $pdo;
+
+  $book = getBookBySlug($_GET['buku']);
+  unlink('storage/book-images/' . $book['gambar_buku']);
 
   $query = "DELETE FROM buku WHERE id_buku = :id";
   $stmt = $pdo->prepare($query);
