@@ -38,8 +38,10 @@ $books = getAllBooks();
             <th scope="col" class="text-nowrap">No</th>
             <th scope="col" class="text-nowrap">Gambar</th>
             <th scope="col" class="text-nowrap">Judul</th>
-            <th scope="col" class="text-nowrap">Aksi</th>
+            <th scope="col" class="text-nowrap">Penulis</th>
+            <th scope="col" class="text-nowrap">Jumlah Halaman</th>
             <th scope="col" class="text-nowrap">Status Dibaca</th>
+            <th scope="col" class="text-nowrap">Aksi</th>
           </tr>
         </thead>
         <tbody class="table-group-divider">
@@ -56,10 +58,10 @@ $books = getAllBooks();
                   <?php endif ?>
                 </td>
                 <td><?= $book['judul_buku']; ?></td>
+                <td><?= $book['penulis']; ?></td>
+                <td><?= $book['jumlah_halaman']; ?></td>
+                <td><?= $book['nama_status'] ?> dibaca</td>
                 <td class="d-flex gap-2 justify-content-center">
-                  <a href="detail.php?book=<?= $book['slug'] ?>" class="btn btn-info">
-                    <i class="bi bi-eye"></i>
-                  </a>
                   <a href="" class="btn btn-success">
                     <i class="bi bi-pencil-square"></i>
                   </a>
@@ -67,7 +69,6 @@ $books = getAllBooks();
                     <i class="bi bi-trash"></i>
                   </a>
                 </td>
-                <td><?= $book['nama_status'] ?> dibaca</td>
               </tr>
               <?php $index++ ?>
             <?php endforeach ?>
