@@ -4,9 +4,8 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif !important;
   }
 
-  .nav-link,
-  .navbar-brand {
-    color: #fff !important;
+  th {
+    padding: .5rem !important;
   }
 
   input[type="search"],
@@ -50,11 +49,16 @@
     text-decoration: none !important;
   }
 
-  .auth-container {
+  #auth {
+    background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  }
+
+  #auth #auth-inner {
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar .nav-link {
+    color: #fff !important;
   }
 </style>

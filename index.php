@@ -3,7 +3,7 @@
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
 
-if (!isset($_SESSION['islogin'])) header('Location: login.php');
+// if (!isset($_SESSION['islogin'])) header('Location: login.php');
 
 if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
 
@@ -24,7 +24,7 @@ $books = getAllBooks();
       <h1>Buku kamu</h1>
     </div>
     <div class="col d-flex justify-content-end align-items-center">
-      <button class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#modal">
+      <button class="btn btn-primary fw-medium" data-mdb-toggle="modal" data-mdb-target="#modal">
         Tambah Buku
       </button>
     </div>
@@ -84,7 +84,7 @@ $books = getAllBooks();
 <!-- end main -->
 
 <!-- modal -->
-<div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+<div class="modal fade" id="modal" data-mdb-backdrop="static" data-mdb-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -111,7 +111,7 @@ $books = getAllBooks();
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Batalkan</button>
           <button type="submit" class="btn btn-primary">Tambah</button>
         </div>
       </form>

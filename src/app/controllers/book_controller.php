@@ -4,7 +4,7 @@ function getAllBooks(): array
 {
   global $pdo;
 
-  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buk u.id_status";
+  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status";
   $stmt = $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
   return $stmt;
