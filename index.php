@@ -93,21 +93,21 @@ $books = getAllBooks();
       </div>
       <form method="POST" enctype="multipart/form-data">
         <div class="modal-body">
-          <div class="mb-3">
+          <div class="mb-4">
             <label for="gambar_buku" class="form-label">Gambar Buku</label>
             <input type="file" class="form-control" id="gambar_buku" name="gambar_buku" autocomplete="off">
           </div>
-          <div class="mb-3">
+          <div class="form-outline mb-4">
+            <input type="text" class="form-control" id="judul_buku" name="judul_buku" required autocomplete="off">
             <label for="judul_buku" class="form-label">Judul Buku</label>
-            <input type="text" class="form-control" id="judul_buku" name="judul_buku" placeholder="Judul Buku" required autocomplete="off">
           </div>
-          <div class="mb-3">
+          <div class="form-outline mb-4">
+            <input type="text" class="form-control" id="penulis" name="penulis" required autocomplete="off">
             <label for="penulis" class="form-label">Penulis</label>
-            <input type="text" class="form-control" id="penulis" name="penulis" placeholder="Penulis Buku" required autocomplete="off">
           </div>
-          <div class="mb-3">
+          <div class="form-outline mb-2">
+            <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" autocomplete="off">
             <label for="jumlah_halaman" class="form-label">Jumlah halaman</label>
-            <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" placeholder="Jumlah halaman" autocomplete="off">
           </div>
         </div>
         <div class="modal-footer">
