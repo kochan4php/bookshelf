@@ -8,11 +8,8 @@
     font-size: 1rem !important;
   }
 
-  th {
-    padding: .5rem !important;
-  }
-
-  input[type="search"] {
+  input[type="search"],
+  .form-control {
     border-radius: 3px !important;
     outline: none;
   }
@@ -35,13 +32,6 @@
   .form-check-input:focus {
     outline: none;
     box-shadow: none;
-  }
-
-  .form-control,
-  .form-control:focus {
-    background-color: #eee !important;
-    color: rgb(15, 23, 42);
-    border-color: #bbb !important;
   }
 
   .table {
