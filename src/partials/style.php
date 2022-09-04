@@ -28,6 +28,8 @@
   .btn-close:active,
   .form-control:active,
   .form-control:focus,
+  .form-select:active,
+  .form-select:focus,
   .form-check-input:active,
   .form-check-input:focus {
     outline: none;

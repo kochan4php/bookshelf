@@ -63,6 +63,9 @@ if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
                 <td><?= $book['nama_status'] ?></td>
                 <td class="d-flex gap-2 justify-content-center">
                   <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="detail.php?buku=<?= $book['slug'] ?>" class="btn btn-success btn-edit">
+                      <i class="fas fa-eye"></i>
+                    </a>
                     <a href="edit.php?buku=<?= $book['slug'] ?>" class="btn btn-info btn-edit">
                       <i class="fas fa-edit"></i>
                     </a>
