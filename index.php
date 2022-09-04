@@ -26,7 +26,7 @@ $bookGenre = getAllBookGenre();
       <h1>Buku kamu</h1>
     </div>
     <div class="col d-flex justify-content-end align-items-center">
-      <button class="btn btn-primary fw-medium" data-bs-toggle="modal" data-bs-target="#modal">
+      <button class="btn btn-primary fw-medium btn-tambah" data-bs-toggle="modal" data-bs-target="#modal-tambah">
         Tambah Buku
       </button>
     </div>
@@ -67,9 +67,9 @@ $bookGenre = getAllBookGenre();
                 <td><?= $book['nama_status'] ?></td>
                 <td class="d-flex gap-2 justify-content-center">
                   <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="" class="btn btn-info">
+                    <button data-book-id="<?= $book['id_buku'] ?>" class="btn btn-info btn-edit" data-bs-toggle="modal" data-bs-target="#modal-edit">
                       <i class="fas fa-edit"></i>
-                    </a>
+                    </button>
                     <a href="index.php?idbuku=<?= $book['id_buku'] ?>&buku=<?= $book['slug'] ?>" class="btn btn-danger" onclick="return confirm('Hapus buku ini?')">
                       <i class="fas fa-trash"></i>
                     </a>
@@ -90,8 +90,8 @@ $bookGenre = getAllBookGenre();
 </div>
 <!-- end main -->
 
-<!-- modal -->
-<div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+<!-- modal tambah -->
+<div class="modal fade" id="modal-tambah" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
@@ -135,13 +135,66 @@ $bookGenre = getAllBookGenre();
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
-          <button type="submit" class="btn btn-primary">Tambah</button>
+          <button type="submit" class="btn btn-primary btn-tambah">Tambah</button>
         </div>
       </form>
     </div>
   </div>
 </div>
-<!-- modal -->
+<!-- modal tambah -->
+
+<!-- modal edit -->
+<div class="modal fade" id="modal-edit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalLabel">Edit Buku</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="gambar_buku" class="form-label">Gambar Buku</label>
+            <input type="file" class="form-control" id="gambar_buku" name="gambar_buku" autocomplete="off">
+          </div>
+          <div class="mb-3">
+            <label for="judul_buku" class="form-label">Judul Buku</label>
+            <input type="text" class="form-control" id="judul_buku" name="judul_buku" required autocomplete="off" placeholder="Masukkan judul buku">
+          </div>
+          <div class="mb-3">
+            <label for="penulis" class="form-label">Penulis</label>
+            <input type="text" class="form-control" id="penulis" name="penulis" required autocomplete="off" placeholder="Masukkan penulis">
+          </div>
+          <div class="mb-3">
+            <label for="jumlah_halaman" class="form-label">Jumlah halaman</label>
+            <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" autocomplete="off" placeholder="Masukkan jumlah halaman">
+          </div>
+          <div class="mb-3">
+            <label for="jumlah_halaman" class="form-label">Genre buku</label>
+            <select class="form-select" name="genre_buku">
+              <?php foreach ($bookGenre as $bg) : ?>
+                <option value="<?= $bg['id_genre'] ?>"><?= $bg['nama_genre'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="jumlah_halaman" class="form-label">Status dibaca</label>
+            <select class="form-select" name="status_dibaca">
+              <?php foreach ($bookStatus as $bs) : ?>
+                <option value="<?= $bs['id_status'] ?>"><?= $bs['nama_status'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batalkan</button>
+          <button type="submit" class="btn btn-primary btn-edit">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- modal edit -->
 
 <!-- require_once footer -->
 <?php require_once __DIR__ . '/src/partials/footer.php' ?>
