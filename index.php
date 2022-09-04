@@ -10,6 +10,8 @@ if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
 if (!empty($_POST)) insertBook($_POST);
 
 $books = getAllBooks();
+$bookStatus = getAllBookStatus();
+$bookGenre = getAllBookGenre();
 
 ?>
 
@@ -39,6 +41,7 @@ $books = getAllBooks();
             <th scope="col" class="text-nowrap">Gambar</th>
             <th scope="col" class="text-nowrap">Judul</th>
             <th scope="col" class="text-nowrap">Penulis</th>
+            <th scope="col" class="text-nowrap">Genre Buku</th>
             <th scope="col" class="text-nowrap">Jumlah Halaman</th>
             <th scope="col" class="text-nowrap">Status Dibaca</th>
             <th scope="col" class="text-nowrap">Aksi</th>
@@ -52,13 +55,14 @@ $books = getAllBooks();
                 <th scope="row"><?= $index ?></th>
                 <td>
                   <?php if ($book['gambar_buku']) : ?>
-                    <img src="storage/book-images/<?= $book['gambar_buku'] ?>" width="100" />
+                    <img src="storage/book-images/<?= $book['gambar_buku'] ?>" width="80" />
                   <?php else : ?>
-                    <img src="storage/no-image-available.webp" width="100" />
+                    <img src="storage/no-image-available.webp" width="80" />
                   <?php endif ?>
                 </td>
                 <td><?= $book['judul_buku']; ?></td>
                 <td><?= $book['penulis']; ?></td>
+                <td><?= $book['nama_genre']; ?></td>
                 <td><?= $book['jumlah_halaman']; ?></td>
                 <td><?= $book['nama_status'] ?></td>
                 <td class="d-flex gap-2 justify-content-center">
@@ -76,7 +80,7 @@ $books = getAllBooks();
             <?php endforeach ?>
           <?php else : ?>
             <tr>
-              <td class="text-center" colspan="7">Kamu belum punya buku :(</td>
+              <td class="text-center" colspan="8">Kamu belum punya buku :(</td>
             </tr>
           <?php endif ?>
         </tbody>
@@ -113,10 +117,19 @@ $books = getAllBooks();
             <input type="number" class="form-control" id="jumlah_halaman" name="jumlah_halaman" autocomplete="off" placeholder="Masukkan jumlah halaman">
           </div>
           <div class="mb-3">
+            <label for="jumlah_halaman" class="form-label">Genre buku</label>
+            <select class="form-select" name="genre_buku">
+              <?php foreach ($bookGenre as $bg) : ?>
+                <option value="<?= $bg['id_genre'] ?>"><?= $bg['nama_genre'] ?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+          <div class="mb-3">
             <label for="jumlah_halaman" class="form-label">Status dibaca</label>
-            <select class="form-select" aria-label="Default select example">
-              <option value="1">Sudah dibaca</option>
-              <option value="2">Belum dibaca</option>
+            <select class="form-select" name="status_dibaca">
+              <?php foreach ($bookStatus as $bs) : ?>
+                <option value="<?= $bs['id_status'] ?>"><?= $bs['nama_status'] ?></option>
+              <?php endforeach ?>
             </select>
           </div>
         </div>

@@ -4,7 +4,10 @@ function getAllBooks(): array
 {
   global $pdo;
 
-  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status";
+  $query = "SELECT * FROM buku 
+    INNER JOIN genre_buku ON buku.genre_buku = genre_buku.id_genre
+    INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status";
+
   $stmt = $pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
 
   return $stmt;
@@ -16,7 +19,11 @@ function getBookBySlug($slug): array
 
   $slug = htmlspecialchars($slug);
 
-  $query = "SELECT * FROM buku INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status WHERE slug = :slug";
+  $query = "SELECT * FROM buku 
+    INNER JOIN genre_buku ON buku.genre_buku = genre_buku.id_genre
+    INNER JOIN status_buku ON buku.status_dibaca = status_buku.id_status 
+    WHERE slug = :slug";
+
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(':slug', $slug);
   $stmt->execute();
@@ -32,6 +39,8 @@ function insertBook($data): void
   $judulBuku = htmlspecialchars($data['judul_buku']);
   $penulis = htmlspecialchars($data['penulis']);
   $jumlahHalaman = htmlspecialchars($data['jumlah_halaman']);
+  $genreBuku = htmlspecialchars($data['genre_buku']);
+  $statusDibaca = htmlspecialchars($data['status_dibaca']);
 
   $upload = $_FILES['gambar_buku']['name'] !== "" ? upload_book_image() : false;
 
@@ -39,19 +48,21 @@ function insertBook($data): void
 
   if ($upload) {
     $query = "INSERT INTO buku VALUES (
-      '', '$upload', :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01', 1
+      '', '$upload', :judul_buku, :slug, :penulis, :jumlah_halaman, :genre_buku, :status_dibaca, 1
     )";
   } else {
     $query = "INSERT INTO buku VALUES (
-      '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, 'STS01', 1
+      '', NULL, :judul_buku, :slug, :penulis, :jumlah_halaman, :genre_buku, :status_dibaca, 1
     )";
   }
 
   $stmt = $pdo->prepare($query);
   $stmt->bindParam(':judul_buku', $judulBuku);
+  $stmt->bindParam(':slug', createSlug($judulBuku));
   $stmt->bindParam(':penulis', $penulis);
   $stmt->bindParam(':jumlah_halaman', $jumlahHalaman);
-  $stmt->bindParam(':slug', createSlug($judulBuku));
+  $stmt->bindParam(':genre_buku', $genreBuku);
+  $stmt->bindParam(':status_dibaca', $statusDibaca);
   $stmt->execute();
 
   if ($stmt->rowCount() > 0) header('Location: index.php');
