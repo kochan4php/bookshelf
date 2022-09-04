@@ -60,21 +60,23 @@ $books = getAllBooks();
                 <td><?= $book['judul_buku']; ?></td>
                 <td><?= $book['penulis']; ?></td>
                 <td><?= $book['jumlah_halaman']; ?></td>
-                <td><?= $book['nama_status'] ?> dibaca</td>
+                <td><?= $book['nama_status'] ?></td>
                 <td class="d-flex gap-2 justify-content-center">
-                  <a href="" class="btn btn-success">
-                    <i class="bi bi-pencil-square"></i>
-                  </a>
-                  <a href="index.php?idbuku=<?= $book['id_buku'] ?>&buku=<?= $book['slug'] ?>" class="btn btn-danger" onclick="return confirm('Hapus buku ini?')">
-                    <i class="bi bi-trash"></i>
-                  </a>
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                    <a href="" class="btn btn-success">
+                      <i class="fas fa-eye"></i>
+                    </a>
+                    <a href="index.php?idbuku=<?= $book['id_buku'] ?>&buku=<?= $book['slug'] ?>" class="btn btn-danger" onclick="return confirm('Hapus buku ini?')">
+                      <i class="fas fa-trash"></i>
+                    </a>
+                  </div>
                 </td>
               </tr>
               <?php $index++ ?>
             <?php endforeach ?>
           <?php else : ?>
             <tr>
-              <td class="text-center" colspan="5">Kamu belum punya buku :(</td>
+              <td class="text-center" colspan="7">Kamu belum punya buku :(</td>
             </tr>
           <?php endif ?>
         </tbody>

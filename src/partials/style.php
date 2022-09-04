@@ -4,12 +4,15 @@
     font-family: "Nunito", Arial, Helvetica, sans-serif !important;
   }
 
+  .fas {
+    font-size: 1rem !important;
+  }
+
   th {
     padding: .5rem !important;
   }
 
-  input[type="search"],
-  .btn {
+  input[type="search"] {
     border-radius: 3px !important;
     outline: none;
   }
