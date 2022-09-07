@@ -46,11 +46,11 @@
 
   #auth {
     background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
-    min-height: 100vh;
   }
 
   #auth #auth-inner {
-    backdrop-filter: blur(10px);
+    min-height: 100vh;
+    backdrop-filter: blur(10px) !important;
   }
 
   .navbar .nav-link {
