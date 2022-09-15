@@ -13,7 +13,7 @@ function getAllBooks(): array
   return $stmt;
 }
 
-function getBookBySlug($slug): array
+function getBookBySlug(string $slug): array
 {
   global $pdo;
 
@@ -32,7 +32,7 @@ function getBookBySlug($slug): array
   return $result;
 }
 
-function insertBook($data): void
+function insertBook(array $data): void
 {
   global $pdo;
 

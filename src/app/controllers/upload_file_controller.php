@@ -39,6 +39,5 @@ function upload_book_image()
     return false;
   }
 
-  if (move_uploaded_file($tmp, 'storage/book-images/' . $filename))
-    return $filename;
+  if (move_uploaded_file($tmp, 'storage/book-images/' . $filename)) return $filename;
 }
