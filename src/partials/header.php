@@ -37,11 +37,13 @@
   <!-- end icon -->
 
   <!-- bootstrap css & icon -->
-  <?php require_once __DIR__ . '/bootstrap/bootstrap-css.php' ?>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <!-- end bootstrap css & icon -->
 
   <!-- font -->
-  <?php require_once __DIR__ . '/font.php' ?>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
   <!-- font -->
 
   <!-- my css -->

@@ -1,6 +1,6 @@
 <?php
 
-function upload_book_image()
+function upload_book_image(): bool | string
 {
   $filename = $_FILES['gambar_buku']['name'];
   $typefile = $_FILES['gambar_buku']['type'];

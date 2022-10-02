@@ -5,7 +5,7 @@ require_once __DIR__ . '/src/init.php';
 
 $books = getAllBooks();
 
-// if (!isset($_SESSION['islogin'])) header('Location: login.php');
+if (!isset($_SESSION['islogin'])) header('Location: login.php');
 
 if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
 
