@@ -16,9 +16,15 @@
           </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-      </form>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="login.php">
+            Login
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
