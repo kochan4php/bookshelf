@@ -1,1 +1,1 @@
-## Bookshelf Management CRUD using PHP AJAX MYSQL
+## Bookshelf Management CRUD using PHP MYSQL
