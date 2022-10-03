@@ -5,14 +5,17 @@ require_once __DIR__ . '/src/init.php';
 
 $books = getAllBooks();
 
-if (!isset($_SESSION['islogin'])) header('Location: login.php');
+// if (!isset($_SESSION['islogin'])) header('Location: login.php');
 
 if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
 
 ?>
 
 <!-- require_once header -->
-<?php require_once __DIR__ . '/src/partials/header.php'; ?>
+<?php
+$title = 'Bookshelf Management';
+require_once __DIR__ . '/src/partials/header.php';
+?>
 <!-- require_once header -->
 
 <!-- main -->
@@ -66,7 +69,7 @@ if (isset($_GET['idbuku']) && isset($_GET['buku'])) deleteBook($_GET['idbuku']);
                     <a href="detail.php?buku=<?= $book['slug'] ?>" class="btn btn-success btn-edit">
                       <i class="fas fa-eye"></i>
                     </a>
-                    <a href="edit.php?buku=<?= $book['slug'] ?>" class="btn btn-info btn-edit">
+                    <a href="edit.php?buku=<?= $book['slug'] ?>" class="btn btn-warning btn-edit">
                       <i class="fas fa-edit"></i>
                     </a>
                     <a href="index.php?idbuku=<?= $book['id_buku'] ?>&buku=<?= $book['slug'] ?>" class="btn btn-danger" onclick="return confirm('Hapus buku ini?')">

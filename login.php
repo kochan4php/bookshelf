@@ -1,8 +1,11 @@
 <!-- require_once header -->
-<?php require_once __DIR__ . '/src/partials/header.php' ?>
+<?php
+$title = 'Login';
+require_once __DIR__ . '/src/partials/header.php';
+?>
 <!-- require_once header -->
 
-<div class="container my-5">
+<div class="container my-4">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
@@ -14,12 +17,12 @@
             <!-- Email input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
-              <input type="email" id="email" name="email" class="form-control" />
+              <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" />
             </div>
             <!-- Password input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" name="password" class="form-control" />
+              <input type="password" id="password" name="password" class="form-control" placeholder="********" />
             </div>
 
             <div class="form-check">

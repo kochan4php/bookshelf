@@ -8,7 +8,10 @@ $book = getBookBySlug($_GET['buku']);
 ?>
 
 <!-- require_once header -->
-<?php require_once __DIR__ . '/src/partials/header.php'; ?>
+<?php
+$title = 'Book Detail';
+require_once __DIR__ . '/src/partials/header.php';
+?>
 <!-- require_once header -->
 
 <!-- main -->

@@ -8,10 +8,13 @@ if (isset($_POST['register'])) register($_POST);
 ?>
 
 <!-- require_once header -->
-<?php require_once __DIR__ . '/src/partials/header.php' ?>
+<?php
+$title = 'Register';
+require_once __DIR__ . '/src/partials/header.php';
+?>
 <!-- require_once header -->
 
-<div class="container my-5">
+<div class="container my-4">
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
@@ -22,19 +25,19 @@ if (isset($_POST['register'])) register($_POST);
           <form method="POST" action="">
             <div class="form-outline mb-4">
               <label class="form-label" for="name">Name</label>
-              <input type="text" id="name" name="name" class="form-control" />
+              <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" />
             </div>
             <div class="form-outline mb-4">
               <label class="form-label" for="username">Username</label>
-              <input type="text" id="username" name="username" class="form-control" />
+              <input type="text" id="username" name="username" class="form-control" placeholder="john_doe" />
             </div>
             <div class="form-outline mb-4">
               <label class="form-label" for="email">Email address</label>
-              <input type="email" id="email" name="email" class="form-control" />
+              <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" />
             </div>
             <div class="form-outline mb-4">
               <label class="form-label" for="password">Password</label>
-              <input type="password" id="password" name="password" class="form-control" />
+              <input type="password" id="password" name="password" class="form-control" placeholder="********" />
             </div>
             <button type="submit" name="register" class="btn btn-primary w-100 mt-3">Sign in</button>
           </form>

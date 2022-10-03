@@ -11,16 +11,19 @@ if (!empty($_POST)) insertBook($_POST);
 ?>
 
 <!-- require_once header -->
-<?php require_once __DIR__ . '/src/partials/header.php'; ?>
+<?php
+$title = 'Add New Book';
+require_once __DIR__ . '/src/partials/header.php';
+?>
 <!-- require_once header -->
 
 <!-- main -->
 <div class="container my-4">
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-md-8">
-      <div class="card mb-4">
+      <div class="card">
         <div class="card-header">
-          <h2>Tambah buku</h2>
+          <h2 class="text-center">Tambah buku</h2>
         </div>
         <div class="card-body">
           <form method="POST" enctype="multipart/form-data">
