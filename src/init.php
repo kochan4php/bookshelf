@@ -8,6 +8,7 @@ require_once __DIR__ . '/app/utils/getUserByEmailOrUsername.php';
 require_once __DIR__ . '/app/utils/dd.php';
 require_once __DIR__ . '/app/controllers/auth/register_controller.php';
 require_once __DIR__ . '/app/controllers/auth/login_controller.php';
+require_once __DIR__ . '/app/controllers/auth/logout_controller.php';
 require_once __DIR__ . '/app/controllers/book_controller.php';
 require_once __DIR__ . '/app/controllers/book_status_controller.php';
 require_once __DIR__ . '/app/controllers/book_genre_controller.php';

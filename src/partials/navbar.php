@@ -1,3 +1,5 @@
+<?php if (isset($_POST['logout'])) logout(); ?>
+
 <nav class="navbar navbar-expand-lg bg-danger navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="index.php">Bookshelf</a>
@@ -20,7 +22,14 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="login.php">Login</a>
+          <?php if (!isset($_SESSION['isLoggedIn']) && !isset($_SESSION['email'])) : ?>
+            <a class="nav-link text-white" href="login.php">Login</a>
+          <?php endif ?>
+          <?php if (isset($_SESSION['isLoggedIn']) && isset($_SESSION['email'])) : ?>
+            <form method="POST">
+              <button type="submit" name="logout" class="nav-link text-white btn border-0">Logout</button>
+            </form>
+          <?php endif ?>
         </li>
       </ul>
     </div>
