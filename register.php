@@ -1,9 +1,16 @@
 <?php
-
+session_start();
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/src/init.php';
 
 if (isset($_POST['register'])) register($_POST);
+
+if (isset($_SESSION['error'])) {
+  if (time() - $_SESSION['flash_time'] > 1) {
+    unset($_SESSION['error']);
+    unset($_SESSION['flash_time']);
+  }
+};
 
 ?>
 
@@ -15,6 +22,16 @@ require_once __DIR__ . '/src/partials/header.php';
 <!-- require_once header -->
 
 <div class="container my-4">
+  <?php if (isset($_SESSION['error'])) : ?>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <?= $_SESSION['error'] ?>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
   <div class="row justify-content-center">
     <div class="col-md-6">
       <div class="card">
@@ -39,7 +56,7 @@ require_once __DIR__ . '/src/partials/header.php';
               <label class="form-label" for="password">Password</label>
               <input type="password" id="password" name="password" class="form-control" placeholder="********" />
             </div>
-            <button type="submit" name="register" class="btn btn-primary w-100 mt-3">Sign in</button>
+            <button type="submit" name="register" class="btn btn-primary w-100 mt-3">Register</button>
           </form>
         </div>
         <div class="card-footer">
