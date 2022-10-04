@@ -5,9 +5,14 @@ require_once __DIR__ . '/src/init.php';
 
 if (isset($_POST['login'])) login($_POST);
 
-if (isset($_SESSION['success'])) {
+if (isset($_SESSION['isLoggedIn']) || isset($_SESSION['email'])) {
+  header('Location: index.php');
+}
+
+if (isset($_SESSION['success']) || isset($_SESSION['error'])) {
   if (time() - $_SESSION['flash_time'] > 1) {
     unset($_SESSION['success']);
+    unset($_SESSION['error']);
     unset($_SESSION['flash_time']);
   }
 };
@@ -27,6 +32,16 @@ require_once __DIR__ . '/src/partials/header.php';
       <div class="col-md-6">
         <div class="alert alert-success alert-dismissible fade show" role="alert">
           <?= $_SESSION['success'] ?>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
+  <?php if (isset($_SESSION['error'])) : ?>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <?= $_SESSION['error'] ?>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       </div>

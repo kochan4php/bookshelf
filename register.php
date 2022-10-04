@@ -5,6 +5,10 @@ require_once __DIR__ . '/src/init.php';
 
 if (isset($_POST['register'])) register($_POST);
 
+if (isset($_SESSION['isLoggedIn']) || isset($_SESSION['email'])) {
+  header('Location: index.php');
+}
+
 if (isset($_SESSION['error'])) {
   if (time() - $_SESSION['flash_time'] > 1) {
     unset($_SESSION['error']);

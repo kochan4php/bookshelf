@@ -1,6 +1,6 @@
 <?php
 
-function login($data)
+function login($data): bool
 {
   $email = htmlspecialchars($data['email']);
   $password = htmlspecialchars($data['password']);
@@ -12,5 +12,11 @@ function login($data)
     $_SESSION['isLoggedIn'] = true;
     $_SESSION['email'] = $user['email'];
     header('Location: index.php');
+    return true;
+  } else {
+    $_SESSION['error'] = 'Credentials tidak valid!';
+    $_SESSION['flash_time'] = time();
+    header('Location: login.php');
+    return false;
   }
 }
