@@ -52,8 +52,8 @@ require_once __DIR__ . '/src/partials/header.php';
             </div>
 
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-              <label class="form-check-label" for="form1Example3">
+              <input class="form-check-input" type="checkbox" name="remember" id="remember" />
+              <label class="form-check-label" for="remember">
                 Remember me
               </label>
             </div>
